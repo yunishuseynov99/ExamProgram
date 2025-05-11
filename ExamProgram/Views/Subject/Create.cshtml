@@ -1,0 +1,45 @@
+﻿@model ExamProgram.Models.Subject
+
+@{
+    ViewData["Title"] = "Create Subject";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="SubjectCode">Subject Code</label>
+        <input asp-for="SubjectCode" type="text" name="SubjectCode" class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="SubjectCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubjectName">Subject Name</label>
+        <input type="text" asp-for="SubjectName" class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="SubjectName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Grade">Grade</label>
+        <input asp-for="Grade" name="Grade" class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="Grade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TeacherFirstName">Teachers First Name</label>
+        <input asp-for="TeacherFirstName" class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="TeacherFirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TeacherLastName">Teachers Last Name</label>
+        <input asp-for="TeacherLastName" type="text"class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="TeacherLastName" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,30 @@
+﻿@model ExamProgram.DTOs.StudentDto
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<h2>Create Student</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span style="height:fit-content !important;" asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span style="height:fit-content !important;" asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Grade"></label>
+        <input asp-for="Grade" class="form-control" />
+        <span style="height:fit-content !important;" asp-validation-for="Grade" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Create" class="btn btn-primary" />
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

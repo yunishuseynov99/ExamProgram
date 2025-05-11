@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ExamProgram.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Students</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Student</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Grade</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentNumber</td>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Grade</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.StudentNumber" class="btn btn-warning">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.StudentNumber" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

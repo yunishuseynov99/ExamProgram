@@ -1,0 +1,44 @@
+﻿@model ExamProgram.Models.Exam
+
+@{
+    ViewData["Title"] = "Edit Exam";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="SubjectCode">Subject</label>
+        <select asp-for="SubjectCode" class="form-control"
+                asp-items="@(ViewData["Subjects"] as SelectList)">
+            <option value="">-- Select Subject --</option>
+        </select>
+        <span asp-validation-for="SubjectCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StudentNumber">Student</label>
+        <select asp-for="StudentNumber" class="form-control"
+                asp-items="@(ViewData["Students"] as SelectList)">
+            <option value="">-- Select Student --</option>
+        </select>
+        <span asp-validation-for="StudentNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Grade">Grade</label>
+        <input asp-for="Grade" class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="Grade" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ExamDate">Exam Date</label>
+        <input asp-for="ExamDate" type="date" class="form-control" required />
+        <span style="height:fit-content !important;" asp-validation-for="ExamDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Update</button>
+</form>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
